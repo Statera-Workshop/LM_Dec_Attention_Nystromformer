@@ -1,0 +1,40 @@
+{
+ "model": "nystrom",
+ "repo": "LM_2021_Nystrom-transformer",
+ "target_repo": "LM_Dec_Attention_Nystromformer",
+ "category": "Attention",
+ "upstream": "vendored from RichardMinsooGo/LM_2021_Nystrom-transformer (see LICENSE in vendor folder if present)",
+ "unified": [
+  "Nystromformer blocks + embedding/positions/head written here, 64 landmarks"
+ ],
+ "torch": "2.5.1+cu124",
+ "gpu": "NVIDIA GeForce RTX 3070 Ti",
+ "stage": "check",
+ "started": "2026-11-02 11:20:07",
+ "smoke": false,
+ "params": 20218416,
+ "causality": {
+  "causal": false,
+  "uses_input": true,
+  "worst_leak": 0.12948882579803467,
+  "min_effect": 1.5562423467636108,
+  "logit_scale": 2.5943041311035158,
+  "length": 256,
+  "positions": [
+   17,
+   63,
+   100,
+   130,
+   200
+  ]
+ },
+ "data_checks": [
+  "enwik8 train bytes  90,000,000 expected  90,000,000 OK",
+  "enwik8 valid bytes   5,000,000 expected   5,000,000 OK",
+  "enwik8 test  bytes   5,000,000 expected   5,000,000 OK",
+  "enwik8 distinct byte values in first 10M train bytes: 200 (vocab 256)",
+  "recall L=512 random gap: 16 answers/sample, keys/values/distractors disjoint OK",
+  "recall L=512 max gap: 16 answers/sample, keys/values/distractors disjoint OK"
+ ],
+ "seconds": 1.9
+}
